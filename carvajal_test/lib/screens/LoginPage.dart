@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
           context, HomePage.route, (route) => false);
     else {
       ShowModal.showSnackBar(
-          context: context, text: "Usuario o contraseña invalida");
+          context: context, text: localizations.translate(keyText: KeyWordsLocalization.loginWrongCredentials));
       setState(() {
         activeForm = true;
       });
@@ -57,18 +57,18 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Expanded(
                       child: TextStyled(
-                    text: "Welcome",
+                    text: localizations.translate(keyText: KeyWordsLocalization.loginWelcome),
                     type: TextStyledType.h2,
                   )),
                   TextButton(
                       onPressed: () =>
                           Navigator.pushNamed(context, RegisterPage.route),
-                      child: Text("registrate"))
+                      child: Text(localizations.translate(keyText: KeyWordsLocalization.loginRegister)))
                 ],
               ),
             ),
             TextStyled(
-              text: "Inicia sesión para continuar",
+              text: localizations.translate(keyText: KeyWordsLocalization.loginWelcomeSubtitle),
               light: true,
             ),
             SizedBox(height: 16.0),
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                         TextButton(
                             onPressed: () => {},
                             child: TextStyled(
-                              text: "Olvidaste tu contraseña?",
+                              text: localizations.translate(keyText: KeyWordsLocalization.loginRecovery),
                               color: Colors.black,
                             ))
                       ],

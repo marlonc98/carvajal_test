@@ -13,6 +13,9 @@ class KeyWordsLocalization {
   static const loginLogin = "loginLogin";
   static const loginRecovery = "loginRecovery";
   static const loginWrongCredentials = "loginWrongCredentials";
+  static const loginWelcome = "loginWelcome";
+  static const loginWelcomeSubtitle = "loginWelcomeSubtitle";
+  static const loginRegister = "loginRegister";
   static const validatorEmail = "validatorEmail";
   static const validatorMatchField = "validatorMatchField";
   static const validatorMinlength = "validatorMinlength";
