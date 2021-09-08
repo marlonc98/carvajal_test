@@ -1,6 +1,7 @@
 import 'package:carvajal_test/back/controllers/AuthController.dart';
 import 'package:carvajal_test/back/model/UserModel.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserProvider with ChangeNotifier {
   UserModel? _user;
@@ -19,5 +20,16 @@ class UserProvider with ChangeNotifier {
       this._user = UserModel.fromJson(response['user']);
     notifyListeners();
     return this._user;
+  }
+
+    Future<UserModel?> getUser() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String? email = sp.getString("email");
+    String? password = sp.getString("password");
+    if(email == null || password == null) return null;
+    else{
+      dynamic values = {"email": email, "password": password};
+      return await this.login(values);
+    }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:carvajal_test/route_generator.dart';
 import 'package:carvajal_test/screens/HomePage.dart';
 import 'package:carvajal_test/screens/LoginPage.dart';
+import 'package:carvajal_test/screens/SplashPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: LoginPage.route,
+      initialRoute: SplashPage.route,
       onGenerateRoute: RouteGenerator.generateRoute,
       supportedLocales: [
         const Locale('es', ''),
