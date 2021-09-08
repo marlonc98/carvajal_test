@@ -1,10 +1,15 @@
 import 'package:carvajal_test/GlobalVars/Language/AppLocalizations.dart';
 import 'package:carvajal_test/GlobalVars/Language/KeyWordsLocalization.dart';
+import 'package:carvajal_test/GlobalVars/Language/User/UserProvider.dart';
+import 'package:carvajal_test/Utils/ShowModal.dart';
 import 'package:carvajal_test/Utils/Validatos.dart';
+import 'package:carvajal_test/back/model/UserModel.dart';
+import 'package:carvajal_test/screens/HomePage.dart';
 import 'package:carvajal_test/screens/RegisterPage.dart';
 import 'package:carvajal_test/screens/Widgets/Button.dart';
 import 'package:carvajal_test/screens/widgets/TextStyled.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   static const route = "/login";
@@ -16,13 +21,28 @@ class _LoginPageState extends State<LoginPage> {
   bool activeForm = true;
   Map<String, dynamic> values = {};
   late AppLocalizations localizations;
+  late UserProvider userProvider;
 
-  _login() {
-    print(values);
+  _login() async {
+    setState(() {
+      activeForm = false;
+    });
+    UserModel? user = await userProvider.login(values);
+    if (user != null)
+      Navigator.pushNamedAndRemoveUntil(
+          context, HomePage.route, (route) => false);
+    else {
+      ShowModal.showSnackBar(
+          context: context, text: "Usuario o contraseña invalida");
+      setState(() {
+        activeForm = true;
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    userProvider = Provider.of<UserProvider>(context);
     localizations = AppLocalizations.of(context);
     return Scaffold(
         body: Padding(
