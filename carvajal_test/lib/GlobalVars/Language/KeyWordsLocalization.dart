@@ -16,4 +16,8 @@ class KeyWordsLocalization {
   static const validatorEmail = "validatorEmail";
   static const validatorMatchField = "validatorMatchField";
   static const validatorMinlength = "validatorMinlength";
+  static const CustomAppBarNoResults = "CustomAppBarNoResults";
+  static const CustomAppBarFilter = "CustomAppBarFilter";
+  static const CustomAppBarSearchHint = "CustomAppBarSearchHint";
+  static const CustomAppBarCountResults = "CustomAppBarCountResults";
 }

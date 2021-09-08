@@ -16,5 +16,9 @@
   "validatorEmail": "El correo no es valido",
   "validatorMatchField": "No coincide con el campo \"{fieldName}\"",
   "validatorMinlength": "El campo debe tener {minLength} carácteres",
+  "CustomAppBarNoResults": "Sin resultados",
+  "CustomAppBarSearchHint": "Buscar...",
+  "CustomAppBarFilter": "Filtrar",
+  "CustomAppBarCountResults": "{results} resultados",
   "d": "d"
 }
