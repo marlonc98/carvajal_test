@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:carvajal_test/GlobalVars/Language/AppLocalizations.dart';
 import 'package:carvajal_test/GlobalVars/Language/KeyWordsLocalization.dart';
+import 'package:carvajal_test/screens/widgets/CustomAppDrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +11,12 @@ class CustomAppBar extends StatefulWidget {
   final Function(String word)? onChangeSearch;
   final bool allowSearch;
   final List? results;
+  final bool showAppDrawer;
   CustomAppBar(
       {key,
       required this.title,
       this.allowSearch = false,
+      this.showAppDrawer = false,
       this.results,
       this.onChangeSearch})
       : super(key: key);
@@ -71,12 +74,17 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 ],
               ))
             : null,
-        leading: !this.searchMode
-            ? BackButton(
+            automaticallyImplyLeading: !this.searchMode,
+        leading:  !this.searchMode
+            ? (widget.showAppDrawer ? CustomAppDrawer() : BackButton(
                 color: Colors.black,
-              )
+              ))
             : null,
-        automaticallyImplyLeading: !this.searchMode,
+            actions: [widget.allowSearch ? (
+              this.searchMode ?
+              TextButton(onPressed: _handleSearch, child: Text(localization.translate(keyText: KeyWordsLocalization.cancel)))
+              :IconButton(onPressed: _handleSearch, icon: Icon(Icons.search, color: Colors.black,))
+            ) :Container()],
         title: this.searchMode
             ? CupertinoSearchTextField(
                 focusNode: this.focusSearch,
