@@ -1,4 +1,3 @@
-
 import 'package:carvajal_test/GlobalVars/Language/AppLocalizations.dart';
 import 'package:carvajal_test/GlobalVars/Language/KeyWordsLocalization.dart';
 
@@ -53,6 +52,17 @@ class Validators {
     return null;
   }
 
+  static String? checkRequired(
+      {required String text,
+      required Map<String, dynamic> fields,
+      required required,
+      required String key,
+      required context}) {
+    if (required && (text.isEmpty || text.length <= 0))
+      return KeyWordsLocalization.validatorIsRequired;
+    return null;
+  }
+
   static String? check(
       {bool isEmail: false,
       int? minLength,
@@ -61,6 +71,7 @@ class Validators {
       int? maxValue,
       String? matchFieldName,
       String? matchFieldKey,
+      bool isRequired: false,
       required dynamic text,
       required Map<String, dynamic> fields,
       required String key,
@@ -83,6 +94,15 @@ class Validators {
           context: context,
           fieldKey: matchFieldKey,
           fieldName: matchFieldName!);
+      if (check != null) return check;
+    }
+    if (isRequired) {
+      String? check = Validators.checkRequired(
+          text: text,
+          fields: fields,
+          required: true,
+          key: key,
+          context: context);
       if (check != null) return check;
     }
     return null;

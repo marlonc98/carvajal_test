@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: SplashPage.route,
+      initialRoute: LoginPage.route,
       onGenerateRoute: RouteGenerator.generateRoute,
       supportedLocales: [
         const Locale('es', ''),

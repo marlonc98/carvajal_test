@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
           context, HomePage.route, (route) => false);
     else {
       ShowModal.showSnackBar(
-          context: context, text: localizations.translate(keyText: KeyWordsLocalization.loginWrongCredentials));
+          context: context, text: localizations.translate(keyText: KeyWordsLocalization.LoginWrongCredentials));
       setState(() {
         activeForm = true;
       });
@@ -57,18 +57,18 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Expanded(
                       child: TextStyled(
-                    text: localizations.translate(keyText: KeyWordsLocalization.loginWelcome),
+                    text: localizations.translate(keyText: KeyWordsLocalization.LoginWelcome),
                     type: TextStyledType.h2,
                   )),
                   TextButton(
                       onPressed: () =>
                           Navigator.pushNamed(context, RegisterPage.route),
-                      child: Text(localizations.translate(keyText: KeyWordsLocalization.loginRegister)))
+                      child: Text(localizations.translate(keyText: KeyWordsLocalization.LoginRegister)))
                 ],
               ),
             ),
             TextStyled(
-              text: localizations.translate(keyText: KeyWordsLocalization.loginWelcomeSubtitle),
+              text: localizations.translate(keyText: KeyWordsLocalization.LoginWelcomeSubtitle),
               light: true,
             ),
             SizedBox(height: 16.0),
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: localizations.translate(
-                            keyText: KeyWordsLocalization.loginEmail),
+                            keyText: KeyWordsLocalization.LoginEmail),
                       ),
                       validator: (value) => Validators.check(
                           isEmail: true,
@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: localizations.translate(
-                            keyText: KeyWordsLocalization.loginPassword),
+                            keyText: KeyWordsLocalization.LoginPassword),
                       ),
                       obscureText: true,
                       validator: (value) => Validators.check(
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                         TextButton(
                             onPressed: () => {},
                             child: TextStyled(
-                              text: localizations.translate(keyText: KeyWordsLocalization.loginRecovery),
+                              text: localizations.translate(keyText: KeyWordsLocalization.LoginRecovery),
                               color: Colors.black,
                             ))
                       ],
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                         active: activeForm,
                         onTap: _login,
                         text: localizations.translate(
-                            keyText: KeyWordsLocalization.loginLogin)),
+                            keyText: KeyWordsLocalization.LoginLogin)),
                   ],
                 )),
           ],
