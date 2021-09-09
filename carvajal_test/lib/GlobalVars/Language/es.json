@@ -7,6 +7,7 @@
   "spanish": "Español",
   "english": "Ingles",
   "nextStep": "Siguitente",
+  "NoResultsNoResults": "Uppss! No hemos encontrado ningún resultado",
   "developedBy": "Desarrollador por Lamz Entertainment",
   "LoginEmail": "Correo electrónico",
   "LoginPassword": "Contraseña",
@@ -37,5 +38,6 @@
   "RegisterConfirmPassword": "Confirmar contraseña",
   "RegisterConfirmPasswordNotMatch": "Contraseña",
   "RegisterRegister": "Registrar",
+  "HomeOurProducts": "Nuestros productos",
   "d": "d"
 }

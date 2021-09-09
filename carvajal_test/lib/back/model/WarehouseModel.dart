@@ -1,14 +1,14 @@
 class WarehouseModel {
-  int id;
+  String id;
   String name;
   String? observations;
   bool isDefault;
   String address;
   String status;
-  int initialQuantity;
-  int availableQuantity;
-  int minQuantity;
-  int maxQuantity;
+  String initialQuantity;
+  String availableQuantity;
+  String minQuantity;
+  String maxQuantity;
   
   WarehouseModel({
     required this.id,

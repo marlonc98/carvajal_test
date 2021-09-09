@@ -6,6 +6,7 @@ class ProductModel {
   String description;
   String reference;
   String status;
+  String image;
   InventoryModel? inventory;
   
   ProductModel({
@@ -14,6 +15,7 @@ class ProductModel {
     required this.description,
     required this.reference,
     required this.status,
+    required this.image,
     this.inventory,
   });
 
@@ -23,5 +25,6 @@ class ProductModel {
         description = json['description'],
         reference = json['reference'],
         status = json['status'],
+        image = json['image'],
         inventory = json['inventory'] != null ? InventoryModel.fromJson(json["inventory"]) :null;
 }

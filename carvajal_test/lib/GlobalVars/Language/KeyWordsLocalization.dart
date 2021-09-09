@@ -7,6 +7,7 @@ class KeyWordsLocalization {
   static const spanish = "spanish";
   static const english = "english";
   static const nextStep = "nextStep";
+  static const NoResultsNoResults = "NoResultsNoResults";
   static const developedBy = "developedBy";
   static const LoginEmail = "LoginEmail";
   static const LoginPassword = "LoginPassword";
@@ -37,4 +38,5 @@ class KeyWordsLocalization {
   static const RegisterConfirmPassword = "RegisterConfirmPassword";
   static const RegisterConfirmPasswordNotMatch = "RegisterConfirmPasswordNotMatch";
   static const RegisterRegister = "RegisterRegister";
+  static const HomeOurProducts = "HomeOurProducts";
 }

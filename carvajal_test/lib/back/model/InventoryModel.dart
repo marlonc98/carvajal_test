@@ -1,7 +1,6 @@
 import 'package:carvajal_test/back/model/WarehouseModel.dart';
 
 class InventoryModel {
-  int id;
   String unit;
   int availableQuantity;
   int unitCost;
@@ -9,7 +8,6 @@ class InventoryModel {
   List<WarehouseModel>? warehouses;
 
   InventoryModel({
-    required this.id,
     required this.unit,
     required this.availableQuantity,
     required this.unitCost,
@@ -18,8 +16,7 @@ class InventoryModel {
   });
 
   InventoryModel.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        unit = json['unit'],
+      : unit = json['unit'],
         availableQuantity = json['availableQuantity'],
         unitCost = json['unitCost'],
         initialQuantity = json['initialQuantity'],
