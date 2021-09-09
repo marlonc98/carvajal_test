@@ -39,4 +39,10 @@ class KeyWordsLocalization {
   static const RegisterConfirmPasswordNotMatch = "RegisterConfirmPasswordNotMatch";
   static const RegisterRegister = "RegisterRegister";
   static const HomeOurProducts = "HomeOurProducts";
+  static const DetailedProductProductName = "DetailedProductProductName";
+  static const DetailedProductProductReference = "DetailedProductProductReference";
+  static const DetailedProductProductStatus = "DetailedProductProductStatus";
+  static const DetailedProductInventoryAvailableQuantity = "DetailedProductInventoryAvailableQuantity";
+  static const DetailedProductInventoryUnitCost = "DetailedProductInventoryUnitCost";
+  static const DetailedProductWarehouses = "DetailedProductWarehouses";
 }

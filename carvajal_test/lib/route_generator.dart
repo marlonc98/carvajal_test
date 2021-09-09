@@ -1,3 +1,4 @@
+import 'package:carvajal_test/screens/DetailedProductPage.dart';
 import 'package:carvajal_test/screens/HomePage.dart';
 import 'package:carvajal_test/screens/LoginPage.dart';
 import 'package:carvajal_test/screens/RegisterPage.dart';
@@ -16,8 +17,11 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => LoginPage());
       case HomePage.route:
         return MaterialPageRoute(builder: (_) => HomePage());
+      case DetailedProductPage.route:
+        DetailedProductPage args2 = args as DetailedProductPage;
+        return MaterialPageRoute(builder: (_) => DetailedProductPage(id: args2.id,));
       default:
-        return MaterialPageRoute(builder: (_) => HomePage());
+        return MaterialPageRoute(builder: (_) => SplashPage());
     }
   }
 }

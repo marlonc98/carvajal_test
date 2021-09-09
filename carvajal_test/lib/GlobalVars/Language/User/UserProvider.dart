@@ -13,7 +13,12 @@ class UserProvider with ChangeNotifier {
   }
 
   Future<UserModel?> login(values) async {
-    UserModel us = UserModel(address: "address", email: "email.com.co", gender: "Masculino", lastname: "lastname", name: "name");
+    UserModel us = UserModel(
+        address: "address",
+        email: "email.com.co",
+        gender: "Masculino",
+        lastname: "lastname",
+        name: "name");
     this._user = us;
     notifyListeners();
     return us;
@@ -24,22 +29,28 @@ class UserProvider with ChangeNotifier {
       this._user = UserModel.fromJson(response['user']);
     notifyListeners();
     return this._user;
-*/  }
+*/
+  }
 
   Future<UserModel?> getUser() async {
-    UserModel us = UserModel(address: "address", email: "email.com.co", gender: "Masculino", lastname: "lastname", name: "name");
-    this._user = us;
-    notifyListeners();
-    return us;
-    /*SharedPreferences sp = await SharedPreferences.getInstance();
+    SharedPreferences sp = await SharedPreferences.getInstance();
     String? email = sp.getString("email");
     String? password = sp.getString("password");
     if (email == null || password == null)
       return null;
     else {
-      dynamic values = {"email": email, "password": password};
-      return await this.login(values);
-    }*/
+      UserModel us = UserModel(
+          address: "address",
+          email: "email.com.co",
+          gender: "Masculino",
+          lastname: "lastname",
+          name: "name");
+      this._user = us;
+      notifyListeners();
+      return us;
+//      dynamic values = {"email": email, "password": password};
+      //    return await this.login(values);
+    }
   }
 
   Future<UserModel?> register(Map<String, dynamic> values) async {

@@ -39,5 +39,11 @@
   "RegisterConfirmPasswordNotMatch": "Contraseña",
   "RegisterRegister": "Registrar",
   "HomeOurProducts": "Nuestros productos",
+  "DetailedProductProductName": "Nombre del producto",
+  "DetailedProductProductReference": "Referencia del producto",
+  "DetailedProductProductStatus": "Estado del producto",
+  "DetailedProductInventoryAvailableQuantity": "Cantidades disponibles",
+  "DetailedProductInventoryUnitCost": "Cossto unidad",
+  "DetailedProductWarehouses": "Bodegas disponibles",
   "d": "d"
 }

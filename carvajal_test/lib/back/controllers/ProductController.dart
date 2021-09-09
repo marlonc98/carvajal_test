@@ -38,7 +38,37 @@ class ProductController {
         "description": "Billetera de cuero negro",
         "reference": "REF-005",
         "status": "inactive",
-        "image": "https://image.freepik.com/psd-gratis/maqueta-billetera-delgada-cuero_1332-5065.jpg",
+        "image":
+            "https://image.freepik.com/psd-gratis/maqueta-billetera-delgada-cuero_1332-5065.jpg",
+        "inventory": {
+          "unit": "piece",
+          "availableQuantity": 150,
+          "unitCost": 560,
+          "initialQuantity": 320,
+          "warehouses": [
+            {
+              "id": "1",
+              "name": "Bodega Norte",
+              "observations": null,
+              "isDefault": true,
+              "address": "Dirección de la bodega Norte",
+              "status": "active",
+              "initialQuantity": "320.0",
+              "availableQuantity": "150",
+              "minQuantity": "100",
+              "maxQuantity": "400"
+            }
+          ]
+        },
+      },
+      {
+        "id": 1,
+        "name": "Billetera",
+        "description": "Billetera de cuero negro",
+        "reference": "REF-005",
+        "status": "active",
+        "image":
+            "https://media.moma.com.co/2436-home_default/billetera-broche-ls4010.jpg",
         "inventory": {
           "unit": "piece",
           "availableQuantity": 150,
@@ -66,38 +96,11 @@ class ProductController {
         "description": "Billetera de cuero negro",
         "reference": "REF-005",
         "status": "inactive",
-        "image": "https://media.moma.com.co/2436-home_default/billetera-broche-ls4010.jpg",
+        "image":
+            "https://http2.mlstatic.com/D_NQ_NP_676257-MCO46129733044_052021-O.jpg",
         "inventory": {
           "unit": "piece",
-          "availableQuantity": 150,
-          "unitCost": 560,
-          "initialQuantity": 320,
-          "warehouses": [
-            {
-              "id": "1",
-              "name": "Bodega Norte",
-              "observations": null,
-              "isDefault": true,
-              "address": "Dirección de la bodega Norte",
-              "status": "active",
-              "initialQuantity": "320.0",
-              "availableQuantity": "150",
-              "minQuantity": "100",
-              "maxQuantity": "400"
-            }
-          ]
-        },
-      },
-      {
-        "id": 1,
-        "name": "Billetera",
-        "description": "Billetera de cuero negro",
-        "reference": "REF-005",
-        "status": "inactive",
-        "image": "https://http2.mlstatic.com/D_NQ_NP_676257-MCO46129733044_052021-O.jpg",
-        "inventory": {
-          "unit": "piece",
-          "availableQuantity": 150,
+          "availableQuantity": 0,
           "unitCost": 560,
           "initialQuantity": 320,
           "warehouses": [
@@ -119,5 +122,38 @@ class ProductController {
     ];
 
     return response.map((e) => ProductModel.fromJson(e)).toList();
+  }
+
+  static Future<ProductModel?> getProduct(int id) async {
+    String relativeUrl = '/product/$id';
+    dynamic response = {
+      "id": 1,
+      "name": "Billetera",
+      "description": "Billetera de cuero negro",
+      "reference": "REF-005",
+      "status": "inactive",
+      "image": "https://img.lovepik.com/photo/50078/3603.jpg_wh860.jpg",
+      "inventory": {
+        "unit": "piece",
+        "availableQuantity": 150,
+        "unitCost": 560,
+        "initialQuantity": 320,
+        "warehouses": [
+          {
+            "id": "1",
+            "name": "Bodega Norte",
+            "observations": null,
+            "isDefault": true,
+            "address": "Dirección de la bodega Norte",
+            "status": "active",
+            "initialQuantity": "320.0",
+            "availableQuantity": "150",
+            "minQuantity": "100",
+            "maxQuantity": "400"
+          }
+        ]
+      },
+    };
+    return ProductModel.fromJson(response);
   }
 }
