@@ -31,6 +31,7 @@
   "RegisterName": "Nombre",
   "RegisterLastname": "Apellido",
   "RegisterAddress": "Dirección",
+  "RegisterGender": "Género",
   "RegisterEmail": "Email",
   "RegisterPassword": "Contraseña",
   "RegisterConfirmPassword": "Confirmar contraseña",

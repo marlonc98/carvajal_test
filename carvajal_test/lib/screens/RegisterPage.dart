@@ -63,8 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     type: TextStyledType.h2,
                   )),
                   TextButton(
-                      onPressed: () =>
-                          Navigator.pop(context),
+                      onPressed: () => Navigator.pop(context),
                       child: Text(localizations.translate(
                           keyText: KeyWordsLocalization.RegisterLogin)))
                 ],
@@ -126,6 +125,24 @@ class _RegisterPageState extends State<RegisterPage> {
                     SizedBox(
                       height: 10,
                     ),
+                    DropdownButtonFormField(
+                      onChanged: (val)=>values["gender"] = val,
+                      hint: Text(localizations.translate(keyText: KeyWordsLocalization.RegisterGender)),
+                        validator: (value) => Validators.check(
+                            isRequired: true,
+                            text: value,
+                            fields: values,
+                            key: 'gender',
+                            context: context),
+                        items: ["Masculino", "Femenino"]
+                            .map((e) => DropdownMenuItem(
+                                  child: Text(e),
+                                  value: e,
+                                ))
+                            .toList()),
+                    SizedBox(
+                      height: 10,
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: localizations.translate(
@@ -169,8 +186,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           text: value,
                           fields: values,
                           matchFieldName: localizations.translate(
-                              keyText:
-                                  KeyWordsLocalization.RegisterConfirmPasswordNotMatch),
+                              keyText: KeyWordsLocalization
+                                  .RegisterConfirmPasswordNotMatch),
                           key: 'password_confirmation',
                           context: context),
                     ),

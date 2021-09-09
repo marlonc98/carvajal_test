@@ -22,6 +22,7 @@ class _SplashPageState extends State<SplashPage> {
   nextStep() async {
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     UserModel? user = await userProvider.getUser();
+    print(user);
     if (user == null) 
       Navigator.of(context).popAndPushNamed(LoginPage.route);
     else 

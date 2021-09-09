@@ -31,6 +31,7 @@ class KeyWordsLocalization {
   static const RegisterName = "RegisterName";
   static const RegisterLastname = "RegisterLastname";
   static const RegisterAddress = "RegisterAddress";
+  static const RegisterGender = "RegisterGender";
   static const RegisterEmail = "RegisterEmail";
   static const RegisterPassword = "RegisterPassword";
   static const RegisterConfirmPassword = "RegisterConfirmPassword";

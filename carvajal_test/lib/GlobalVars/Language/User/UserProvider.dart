@@ -13,17 +13,25 @@ class UserProvider with ChangeNotifier {
   }
 
   Future<UserModel?> login(values) async {
-    dynamic response = await AuthController.login(values);
+    UserModel us = UserModel(address: "address", email: "email.com.co", gender: "Masculino", lastname: "lastname", name: "name");
+    this._user = us;
+    notifyListeners();
+    return us;
+/*    dynamic response = await AuthController.login(values);
     if (response == null || response['user'] == null)
       this._user = null;
     else
       this._user = UserModel.fromJson(response['user']);
     notifyListeners();
     return this._user;
-  }
+*/  }
 
   Future<UserModel?> getUser() async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
+    UserModel us = UserModel(address: "address", email: "email.com.co", gender: "Masculino", lastname: "lastname", name: "name");
+    this._user = us;
+    notifyListeners();
+    return us;
+    /*SharedPreferences sp = await SharedPreferences.getInstance();
     String? email = sp.getString("email");
     String? password = sp.getString("password");
     if (email == null || password == null)
@@ -31,7 +39,7 @@ class UserProvider with ChangeNotifier {
     else {
       dynamic values = {"email": email, "password": password};
       return await this.login(values);
-    }
+    }*/
   }
 
   Future<UserModel?> register(Map<String, dynamic> values) async {

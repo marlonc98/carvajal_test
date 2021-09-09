@@ -1,5 +1,5 @@
+import 'package:carvajal_test/constants.dart';
 import 'package:carvajal_test/route_generator.dart';
-import 'package:carvajal_test/screens/HomePage.dart';
 import 'package:carvajal_test/screens/LoginPage.dart';
 import 'package:carvajal_test/screens/SplashPage.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,11 +27,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: LoginPage.route,
+      initialRoute: SplashPage.route,
       onGenerateRoute: RouteGenerator.generateRoute,
       supportedLocales: [
         const Locale('es', ''),
       ],
+      theme: ThemeData.light().copyWith(
+        appBarTheme: AppBarTheme().copyWith(backgroundColor: Colors.white),
+        floatingActionButtonTheme: FloatingActionButtonThemeData().copyWith(
+          backgroundColor: COLOR_MAIN,
+        )
+      ),
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

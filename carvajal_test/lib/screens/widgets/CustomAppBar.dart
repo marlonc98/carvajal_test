@@ -76,7 +76,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             : null,
             automaticallyImplyLeading: !this.searchMode,
         leading:  !this.searchMode
-            ? (widget.showAppDrawer ? CustomAppDrawer() : BackButton(
+            ? (widget.showAppDrawer ? IconButton(onPressed: () => Scaffold.of(context).openDrawer(), icon: Icon(Icons.account_circle_outlined, color: Colors.black,)) : BackButton(
                 color: Colors.black,
               ))
             : null,
